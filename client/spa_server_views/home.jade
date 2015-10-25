@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    script(src="./global/vendor/traceur.js")
+    script(src="./global/vendor/system.js")
+    script(src="./global/vendor/angular2.min.js")
+
+  body
+   h1= title
+   p Welcome to #{title} salah bhenchode slaah
+   app
+   script.
+     System.import('./build/home/scripts/bootstrap.js');
