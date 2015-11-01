@@ -15,7 +15,7 @@ export class App {
 	name: string;
 
 	constructor() {
-		this.name = "Yash Saxena";
+		this.name = "Yash Saxena salah chotia";
 	}
 }
 

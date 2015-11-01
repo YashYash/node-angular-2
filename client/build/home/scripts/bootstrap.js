@@ -11,16 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
+var nav_js_1 = require('/build/home/scripts/directives/nav.js');
 var App = (function () {
     function App() {
-        this.name = "Yash Saxena";
+        this.name = "Got eeeemmmm slaha chotia shit salah mother chode";
     }
     App = __decorate([
         angular2_1.Component({
             selector: 'app'
         }),
         angular2_1.View({
-            templateUrl: "/home/templates/home.html"
+            templateUrl: "/home/templates/home.html",
+            directives: [nav_js_1.Nav]
         }), 
         __metadata('design:paramtypes', [])
     ], App);

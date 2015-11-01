@@ -12,7 +12,8 @@
         "sourceMap": true
     },
     "files": [
-        "home/scripts/bootstrap.ts"
+        "home/scripts/bootstrap.ts",
+        "home/scripts/directives/nav.ts"
     ],
     "compileOnSave": true,
     "exclude": []
