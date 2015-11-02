@@ -58,8 +58,13 @@ gulp.task('styles:home', function() {
  */
 gulp.task('start', function() {
   console.log("#### Start the server");
+  var src = '../start.js';
   nodemon({
-    script: '../start.js'
+    script: src,
+    ext: "js html"
+  }).on('restart', function() {
+    gulp.src(src)
+      .pipe(livereload())
   })
 });
 
@@ -73,15 +78,15 @@ gulp.task('watch', function() {
   livereload.listen();
 
   // server
-  gulp.watch('../server/app.js', ['start']);
-  gulp.watch('../server/start.js', ['start']);
-  gulp.watch('../server/routes/*.js', ['start']);
-  gulp.watch('../server/api/*.js', ['start']);
+  gulp.watch('../server/app.js', ['scripts']);
+  gulp.watch('../server/start.js', ['scripts']);
+  gulp.watch('../server/routes/*.js', ['scripts']);
+  gulp.watch('../server/api/*.js', ['scripts']);
 
   // client
-  gulp.watch("home/styles/*.css", ['server']);
-  gulp.watch("home/scripts/**.ts", ['server']);
-  gulp.watch("home/templates/**", ['server']);
+  gulp.watch("home/styles/*.css", ['cssLint:home', 'styles:home']);
+  gulp.watch("home/scripts/**.ts", ['scripts']);
+  gulp.watch("home/templates/**", ['styles:home']);
 
 });
 

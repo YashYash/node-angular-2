@@ -1,3 +1,4 @@
 node_modules/
-client/build/
+client/build/**.css
+client/build/**.js
 npm-debug.log

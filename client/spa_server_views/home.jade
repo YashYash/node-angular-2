@@ -3,13 +3,13 @@ html
   head
     title= title
     script(src="./global/vendor/traceur.js")
-    script(src="./global/vendor/system.js")
-    script(src="./global/vendor/angular2.min.js")
+    script(src="https://code.angularjs.org/tools/system.js")
+    script(src="https://code.angularjs.org/2.0.0-alpha.45/angular2.js")
+    script(src="https://code.angularjs.org/2.0.0-alpha.45/http.dev.js")
+    script(src="https://code.angularjs.org/2.0.0-alpha.45/router.dev.js")
     link(href="./build/home/styles/home-app.min.css" rel="stylesheet")
 
   body
-   h1= title
-   p Welcome to #{title} monther face chode
    app
    script.
-     System.import('./build/home/scripts/bootstrap.js');
+     System.import('./build/home/scripts/app.js');

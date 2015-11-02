@@ -7,6 +7,15 @@
   "installed": {
     "angular2/angular2.d.ts": {
       "commit": "3191f6e0088eee07c4d8fd24e4d27a40a60d9eb9"
+    },
+    "es6-shim/es6-shim.d.ts": {
+      "commit": "ac5cd185d007f6aacd6eeaaecfb75dae3ff59553"
+    },
+    "angular2/router-2.0.0-alpha.39.d.ts": {
+      "commit": "ac5cd185d007f6aacd6eeaaecfb75dae3ff59553"
+    },
+    "angular2/angular2-2.0.0-alpha.39.d.ts": {
+      "commit": "ac5cd185d007f6aacd6eeaaecfb75dae3ff59553"
     }
   }
 }

@@ -1,22 +1,37 @@
-/// <reference path="../typings/angular2/angular2.d.ts" />
 
-import { Component, View, bootstrap } from 'angular2/angular2';
+import { Component, View, bootstrap, provide } from 'angular2/angular2';
+import {HTTP_PROVIDERS} from 'angular2/http';
+import {ROUTER_DIRECTIVES, RouteConfig, Location, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy, Route, AsyncRoute, Router} from 'angular2/router';
+
+import { Nav } from '/build/home/scripts/directives/nav.js';
+import { Home } from '/build/home/scripts/directives/home.js';
+import { About } from '/build/home/scripts/directives/about.js';
 
 @Component({
 	selector: 'app'
 })
 
+@RouteConfig([
+	new Route({ path: '/', component: Home, as: 'Home' })
+	new Route({ path: '/about', component: About, as: 'About' })
+])
+
 @View({
-	templateUrl: "templates/home.html"
+	templateUrl: "/home/templates/parent.html",
+	directives: [Nav, Home, About, ROUTER_DIRECTIVES]
 })
 
 // Component controller
-export class App {
-	name: string;
+class App {
 
-	constructor() {
-		this.name = "Yash Saxena salah chotia";
+	router: Router;
+	location: Location;
+
+	constructor(router: Router, location: Location) {
+		this.router = router;
+		this.location = location;
 	}
 }
 
-// bootstrap(App);
+
+bootstrap(App, [ROUTER_PROVIDERS, HTTP_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })]);
