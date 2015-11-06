@@ -1,3 +1,7 @@
+/**
+ *	app.ts - file that bootstraps the app
+ */
+
 
 import { Component, View, bootstrap, provide } from 'angular2/angular2';
 import {HTTP_PROVIDERS} from 'angular2/http';
@@ -12,7 +16,7 @@ import { About } from '/build/home/scripts/directives/about.js';
 })
 
 @RouteConfig([
-	new Route({ path: '/', component: Home, as: 'Home' })
+	new Route({ path: '/', component: Home, as: 'Home' }),
 	new Route({ path: '/about', component: About, as: 'About' })
 ])
 
